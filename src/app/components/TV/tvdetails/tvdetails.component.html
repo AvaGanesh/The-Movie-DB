@@ -1,0 +1,27 @@
+<div *ngIf="tvDetails;else loadingTemplate">
+    <div id="forBlur" style="background-image: url({{tvDetails.poster_path}});">
+        
+    </div>
+    <div class="row"> 
+        <div class="col-lg-3">
+            <img class="poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{tvDetails.backdrop_path}}" style="filter: blur(0);">
+        </div>
+        <div class="col-lg-9">
+           <h1>{{tvDetails.name}}</h1>
+           <p class="genres">{{genres}} - <strong>{{tvDetails.number_of_seasons}}</strong>  Seasons</p>
+           <h2 class="tagline">{{tvDetails.tagline}}</h2> 
+           <div>
+            <h2 style="margin: 0px;">User Rating</h2>
+            <div class="badge">
+                  {{tvDetails.vote_average}}
+            </div> 
+           </div>
+           <h3 class="overview">Overview</h3>
+           <p class="overview">{{tvDetails.overview}}</p>
+        </div>
+    </div>
+    
+</div>
+<ng-template #loadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>

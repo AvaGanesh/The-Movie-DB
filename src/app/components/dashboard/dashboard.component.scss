@@ -1,0 +1,19 @@
+
+.hover:hover {
+    cursor: pointer;
+}
+
+mat-button-toggle-group {
+    margin-left: 10px;
+}
+
+
+.selected {
+    color: black;
+    background-color: white;
+}
+
+.deselcted {
+    color: #FFFFFFE6;
+    background-color: #1C1E21;
+}

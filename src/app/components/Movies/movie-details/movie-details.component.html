@@ -1,0 +1,27 @@
+<div *ngIf="movieDetails;else loadingTemplate">
+    <div id="forBlur" style="background-image: url({{movieDetails.poster_path}});">
+        
+    </div>
+    <div class="row"> 
+        <div class="col-lg-3">
+            <img class="poster" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movieDetails.backdrop_path}}" style="filter: blur(0);">
+        </div>
+        <div class="col-lg-9">
+           <h1>{{movieDetails.title}}</h1>
+           <p class="genres">{{genres}} - <strong>{{movieDetails.runtime}}</strong>  m</p>
+           <h2 class="tagline">{{movieDetails.tagline}}</h2> 
+           <div>
+            <h2 style="margin: 0px;">User Rating</h2>
+            <div class="badge">
+                  {{movieDetails.vote_average}}
+            </div> 
+           </div>
+           <h3 class="overview">Overview</h3>
+           <p class="overview">{{movieDetails.overview}}</p>
+        </div>
+    </div>
+    
+</div>
+<ng-template #loadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>

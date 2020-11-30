@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="row">
+       
+        <h2 class="hover">Movies </h2>
+        <mat-button-toggle-group appearance="legacy" (change)="viewToggle($event)" name="fontStyle" aria-label="Trends" value="popular">
+            <mat-button-toggle value="popular" [className]="isPopular? 'selected': 'deselected'">Popular</mat-button-toggle>
+            <mat-button-toggle value="upcoming" [className]="!isPopular? 'selected': 'deselected'">Upcoming</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div style="display:flex; width: 100%; overflow-x: scroll;" *ngIf="isPopular;else showUpcoming">
+        <div class="col-md-2" *ngFor="let data of popularMovies">
+            <app-movie-card [movieData]="data" [topWidth]="topWidth"></app-movie-card>
+        </div>
+    </div>
+    <ng-template #showUpcoming>
+        <div style="display:flex; width: 100%; overflow-x: scroll;">
+            <div class="col-md-2" *ngFor="let data of upcomingMovies">
+                <app-movie-card [movieData]="data" [topWidth]="topWidth"></app-movie-card>
+            </div>
+        </div> 
+    </ng-template>
+    <div class="row" style="margin-top: 20px;">
+        <h2>
+            TV 
+        </h2>
+        <mat-button-toggle-group appearance="legacy" (change)="viewToggleTV($event)" name="fontStyle" aria-label="Trends" value="popular">
+            <mat-button-toggle value="popular" [className]="isPopularTV? 'selected': 'deselected'">Popular</mat-button-toggle>
+            <mat-button-toggle value="latest" [className]="!isPopularTV? 'selected': 'deselected'">Top Rated</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div style="display:flex; width: 100%; overflow-x: scroll;" *ngIf="isPopularTV;else showUpcomingTV">
+        <div class="col-md-2" *ngFor="let data of popularTV">
+            <app-tvcard [tvData]="data" [topWidth]="topWidthTV"></app-tvcard>
+        </div>
+    </div>
+    <ng-template #showUpcomingTV>
+        <div style="display:flex; width: 100%; overflow-x: scroll;">
+            <div class="col-md-2" *ngFor="let data of topRatedTV">
+                <app-tvcard [tvData]="data" [topWidth]="topWidthTV"></app-tvcard>
+            </div>
+        </div> 
+    </ng-template>
+</div> 
+

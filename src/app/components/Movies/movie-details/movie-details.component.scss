@@ -1,0 +1,73 @@
+
+.poster {
+    margin-top: 10px;
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+    filter: blur(0);
+    z-index: 100;
+}
+
+h1 {
+    font-family: inherit;
+    margin-top: 4%;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+
+p {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    font-weight: 500;
+}
+
+.overview {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.genres {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 17px;
+}
+
+h3.overview {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+#forBlur {
+    height: 500px;
+    width: 100%;
+    margin: auto;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+
+.row {
+    margin: auto;
+    margin-top: -500px;
+    z-index: 10;
+}
+
+
+div.badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+    border: 2px solid yellowgreen;
+    padding-top: 10px;
+}

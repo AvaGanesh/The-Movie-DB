@@ -1,0 +1,13 @@
+<div class="card" (click)="goToTVDetails()">
+   
+    <img class="card" src="{{imageUrl}}" alt="">
+    <h3 class="movie-title">
+        {{tvData.name}}
+    </h3>
+    <p>
+        {{tvData.first_air_date }}
+    </p>
+    <div class="badge" [style.top.%]="topWidth">
+        {{tvData.vote_average}}
+    </div>
+</div>

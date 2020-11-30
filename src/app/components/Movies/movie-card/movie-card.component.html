@@ -1,0 +1,13 @@
+<div class="card" (click)="cardClicked()">
+   
+    <img class="card" src="{{imageUrl}}" alt="">
+    <h3 class="movie-title">
+        {{movieData.title}}
+    </h3>
+    <p class="release_date">
+        {{movieData.release_date }}
+    </p>
+    <div class="badge" [style.top.%]="topWidth">
+        {{movieData.vote_average}} 
+    </div>
+</div>

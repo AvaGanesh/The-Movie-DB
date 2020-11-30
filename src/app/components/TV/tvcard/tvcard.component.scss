@@ -1,0 +1,19 @@
+.badge {
+    border-radius: 50%;
+    background: inherit;
+    color: yellowgreen;
+    height: 34px;
+    position: absolute;
+    left: 10%;
+    background: black;
+    width: 34px;
+    text-align: center;
+    padding-top: 2px;
+    font-weight: 600;
+    font-family: inherit;
+    border: 2px solid yellowgreen;
+}
+
+.card:hover {
+    cursor: pointer;
+}

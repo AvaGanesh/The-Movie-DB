@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <h2>
+          Popular TV
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <app-filter (filterApplied)="applyFilter($event)"></app-filter>
+        </div>
+        <div class="col-lg-9">
+            <div class="row" *ngIf="tv">
+                <div class="col-md-3 col-sm-6 col-12"  *ngFor="let data of tv | genreFilter : appliedFilter">
+                    <app-tvcard [tvData]="data" [topWidth]="topWidth"></app-tvcard>
+                </div>
+            </div>
+        </div>
+      </div>
+      <mat-paginator [length]="totalSize" *ngIf="tv" (page)="pageChange($event)"
+            [pageSize]="pageSize">
+      </mat-paginator>
+</div>
